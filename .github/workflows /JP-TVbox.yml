@@ -98,7 +98,7 @@ jobs:
         KERNEL_AUTO_LATEST: ture
         PACKAGE_SOC: diy
         GZIP_IMGS: .xz
-        SCRIPT_DIY_PATH: JP-TVbox/JP-TVbox.sh
+        SCRIPT_DIY_PATH: JP-TVbox/mk_rk3566_jp-tvbox.sh
         WHOAMI: nantayo
         SW_FLOWOFFLOAD: 0
         SFE_FLOW: 0
