@@ -1,4 +1,4 @@
-name: Build OpenWRT-IMM for JP-TVbox
+name: Build OpenWRT-IMM for JP-TVbox 6.1.99
 
 on:
   workflow_dispatch:
