@@ -1,14 +1,14 @@
-name: Build OpenWRT-IMM for N1
+name: Build OpenWRT-IMM for JP-TVbox
 
 on:
   workflow_dispatch:
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: openwrt-23.05
-  CONFIG_FILE: N1-IMM/.config
-  DIY_SH: N1-IMM/diy.sh
-  FILES: N1-IMM/files
+  REPO_BRANCH: openwrt-24.10
+  CONFIG_FILE: JP-TVbox/.config
+  DIY_SH: JP-TVbox/diy.sh
+  FILES: JP-TVbox/files
   TZ: Asia/Shanghai
 
 jobs:
@@ -139,6 +139,7 @@ jobs:
         df -hT
         mkdir upload
         cp openwrt/bin/targets/*/*/*.tar.gz upload/
+    
     - name: Package armsr as openwrt
       if: ${{ env.compile_status }} == 'success' && !cancelled()
       uses: unifreq/openwrt_packit@master
@@ -152,7 +153,6 @@ jobs:
         WHOAMI: Jumbotsang
         SW_FLOWOFFLOAD: 0
         SFE_FLOW: 0
-        ENABLE_WIFI_K510: 0
 
     - name: mv output to upload file
       run: mv /opt/openwrt_packit/output/* upload/
